@@ -1,5 +1,5 @@
 <template>
-	<h1 class="text-2xl text-red-400 font-semibold">Hello from index</h1>
+	<main class="container max-w-7xl mx-auto"></main>
 </template>
 
 <script setup lang="ts"></script>
