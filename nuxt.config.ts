@@ -9,4 +9,10 @@ export default defineNuxtConfig({
 		configPath: 'tailwind.config',
 		viewer: true,
 	},
+	content: {
+		highlight: {
+			theme: 'nord',
+			preload: ['ts', 'js', 'json', 'vue', 'bash', 'html'],
+		},
+	},
 });

@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
 	content: [
 		'./components/**/*.{js,vue,ts}',
@@ -8,7 +9,9 @@ module.exports = {
 		'./nuxt.config.{js,ts}',
 	],
 	theme: {
-		extend: {},
+		extend: {
+			sans: ['Poppins', ...defaultTheme.fontFamily.sans],
+		},
 	},
 	plugins: [],
 };

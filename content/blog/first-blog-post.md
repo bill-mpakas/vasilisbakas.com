@@ -3,7 +3,7 @@ title: My go-to plugins to a fresh WordPress Installation
 featured_image: ./images/image.jpg
 date: 2020-11-01
 summary: A list of useful plugins i find my self installing in every WordPress project
-tags: ["WordPress"]
+tags: ["WordPress", "Tools"]
 ---
 
 
@@ -16,7 +16,13 @@ Below is a list of free plugins i find useful to install on a fresh WordPress in
  5.  [Insert Headers and Footers ](https://wordpress.org/plugins/insert-headers-and-footers/)
  6. [Contact Form 7 ](https://el.wordpress.org/plugins/contact-form-7/)
 
- ![MarineGEO circle logo](./images/image.jpg "MarineGEO logo") component from your `components/content/` directory or provided by a module.
+You can use inline code
+
+const hello = 'world'
+
+:::callout
+hey there
+:::
 
 
 
