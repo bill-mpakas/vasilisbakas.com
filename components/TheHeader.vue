@@ -1,7 +1,7 @@
 <template>
 	<header class="bg-transparent">
 		<nav
-			class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+			class="mx-auto flex max-w-7xl items-center justify-between px-2 xl:px-0 py-6"
 			aria-label="Global"
 		>
 			<a href="/" class="-m-1.5 p-1.5">
@@ -27,7 +27,7 @@
 					v-for="item in navigation"
 					:key="item.name"
 					:to="item.href"
-					class="text-lg font-semibold leading-6 text-gray-900"
+					class="text-lg font-semibold leading-6 text-gray-700"
 					>{{ item.name }}</NuxtLink
 				>
 			</div>
@@ -71,8 +71,9 @@ import { Dialog, DialogPanel } from '@headlessui/vue';
 import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline';
 
 const navigation = [
-	{ name: 'Blog', href: '/blog' },
 	{ name: 'About', href: '/about' },
+	{ name: 'Articles', href: '/blog' },
+	{ name: 'Projects', href: '/projects' },
 ];
 
 const mobileMenuOpen = ref(false);

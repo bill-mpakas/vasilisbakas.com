@@ -3,7 +3,7 @@ title: My go-to plugins to a fresh WordPress Installation
 featured_image: ./images/image.jpg
 date: 2020-11-01
 summary: A list of useful plugins i find my self installing in every WordPress project
-tags: ["WordPress", "Tools"]
+tags: ["wordpress", "tools"]
 ---
 
 
