@@ -23,12 +23,12 @@
 				</button>
 			</div>
 			<div class="hidden lg:flex lg:gap-x-12">
-				<NuxtLink
+				<a
 					v-for="item in navigation"
 					:key="item.name"
-					:to="item.href"
+					:href="item.href"
 					class="text-lg font-semibold leading-6 text-gray-700"
-					>{{ item.name }}</NuxtLink
+					>{{ item.name }}</a
 				>
 			</div>
 		</nav>

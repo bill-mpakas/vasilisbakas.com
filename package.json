@@ -12,7 +12,7 @@
     "@nuxt-themes/typography": "^1.0.1",
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "latest",
-    "@types/node": "^20.6.0",
+    "@types/node": "^20.8.8",
     "nuxt": "latest",
     "nuxt-headlessui": "^1.1.4"
   },
