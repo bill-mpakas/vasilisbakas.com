@@ -12,12 +12,12 @@
     "@nuxt-themes/typography": "^1.0.1",
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "latest",
-    "@types/node": "^20.8.9",
+    "@types/node": "^20.10.6",
     "nuxt": "latest",
-    "nuxt-headlessui": "^1.1.4"
+    "nuxt-headlessui": "^1.1.5"
   },
   "dependencies": {
-    "@heroicons/vue": "^2.0.18",
+    "@heroicons/vue": "^2.1.1",
     "@nuxt/content": "latest"
   }
 }
