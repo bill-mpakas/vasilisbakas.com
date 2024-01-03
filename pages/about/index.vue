@@ -8,10 +8,10 @@
 					Objective
 				</h2>
 				<p class="text-lg lg:text-xl leading-6 text-gray-700">
-					A Product Designer with a background in front-end development,
-					experienced in solving complex UX design challenges, as well as
-					collecting and analyzing qualitative and quantitative data to create
-					actionable insights.
+					A goal-oriented Product Designer with a background in front-end
+					development. Experienced in solving complex UX design challenges, as
+					well as collecting and analyzing qualitative and quantitative data to
+					create actionable insights.
 				</p>
 			</section>
 			<section id="summary-of-qualifications">
@@ -45,12 +45,12 @@
 						:key="index"
 						class="flex flex-col gap-2"
 					>
-						<div class="flex flex-row justify-between">
+						<div class="flex flex-row justify-between gap-2">
 							<!-- Content -->
 							<div>
 								<!-- Main Details -->
 								<div>
-									<h3 class="font-medium text-2xl text-gray-900">
+									<h3 class="font-medium text-xl md:text-2xl text-gray-900">
 										{{ job.company }}
 									</h3>
 									<p class="text-xl text-gray-700">{{ job.role }}</p>
@@ -60,8 +60,10 @@
 							</div>
 							<!-- Date -->
 							<div class="flex flex-col gap-px text-right">
-								<p class="text-lg text-gray-700">{{ job.date }}</p>
-								<p class="text-lg text-gray-700">{{ job.location }}</p>
+								<p class="text-base md:text-lg text-gray-700">{{ job.date }}</p>
+								<p class="text-base md:text-lg text-gray-700">
+									{{ job.location }}
+								</p>
 							</div>
 						</div>
 					</li>
@@ -79,7 +81,7 @@
 						:key="index"
 						class="flex flex-col gap-2"
 					>
-						<div class="flex flex-row justify-between">
+						<div class="flex flex-row justify-between gap-2">
 							<!-- Content -->
 							<div>
 								<!-- Main Details -->
@@ -97,8 +99,12 @@
 							</div>
 							<!-- Date -->
 							<div class="flex flex-col gap-px text-right">
-								<p class="text-lg text-gray-700">{{ school.date }}</p>
-								<p class="text-lg text-gray-700">{{ school.location }}</p>
+								<p class="text-base md:text-lg text-gray-700">
+									{{ school.date }}
+								</p>
+								<p class="text-base md:text-lg text-gray-700">
+									{{ school.location }}
+								</p>
 							</div>
 						</div>
 					</li>
@@ -111,17 +117,21 @@
 					Licenses & Certifications
 				</h2>
 				<div
-					class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8 2xl:gap-10"
+					class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-4 md:gap-8 2xl:gap-10"
 				>
 					<div
 						v-for="(certificates, category) in groupedCertificationData"
 						:key="category"
 					>
-						<h4 class="text-xl mb-2 font-medium">{{ category }}</h4>
-						<ul class="flex flex-col gap-4">
-							<li v-for="(certificate, index) in certificates" :key="index">
+						<h4 class="text-xl mb-2 xl:mb-4 font-medium">{{ category }}</h4>
+						<ul class="flex flex-col divide-y divide-dashed divide-slate-300">
+							<li
+								class=""
+								v-for="(certificate, index) in certificates"
+								:key="index"
+							>
 								<!-- Name & Organization -->
-								<div class="flex flex-col gap-px">
+								<div class="flex flex-col gap-px py-2">
 									<!-- <Icon
 										size="0.8rem"
 										:name="certificate.icon"
