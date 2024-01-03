@@ -1,5 +1,5 @@
 <template>
-	<main id="resume" class="container max-w-7xl py-12 xl:py-24">
+	<main id="resume" class="max-w-7xl py-12 xl:py-24">
 		<div class="flex flex-col gap-8 xl:gap-16 2xl:gap-24">
 			<section id="objective">
 				<h2
@@ -26,7 +26,7 @@
 						:key="index"
 						class="flex flex-col gap-2"
 					>
-						<h3 class="font-medium text-2xl text-gray-900">
+						<h3 class="font-medium text-xl text-gray-900">
 							{{ skill.title }}
 						</h3>
 						<p class="text-xl text-gray-700">{{ skill.description }}</p>
@@ -39,12 +39,82 @@
 				>
 					Professional Experience
 				</h2>
+				<ul class="grid grid-cols-1 gap-4 md:gap-8 2xl:gap-10">
+					<li
+						v-for="(job, index) in experience"
+						:key="index"
+						class="flex flex-col gap-2"
+					>
+						<div class="flex flex-row justify-between">
+							<!-- Content -->
+							<div>
+								<!-- Main Details -->
+								<div>
+									<h3 class="font-medium text-2xl text-gray-900">
+										{{ job.company }}
+									</h3>
+									<p class="text-xl text-gray-700">{{ job.role }}</p>
+								</div>
+								<!-- Info - Description -->
+								<div v-html="job.description" class="prose prose-lg mt-4"></div>
+							</div>
+							<!-- Date -->
+							<div class="flex flex-col gap-px text-right">
+								<p class="text-lg text-gray-700">{{ job.date }}</p>
+								<p class="text-lg text-gray-700">{{ job.location }}</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</section>
+			<section id="education">
+				<h2
+					class="text-xl 2xl:text-2xl font-medium max-w-[400px] uppercase mb-8 border-gray-600 pb-3 border-b-2"
+				>
+					Education
+				</h2>
+				<ul class="grid grid-cols-1 gap-4 md:gap-8 2xl:gap-10">
+					<li
+						v-for="(school, index) in education"
+						:key="index"
+						class="flex flex-col gap-2"
+					>
+						<div class="flex flex-row justify-between">
+							<!-- Content -->
+							<div>
+								<!-- Main Details -->
+								<div>
+									<h3 class="font-medium text-2xl text-gray-900">
+										{{ school.school }}
+									</h3>
+									<p class="text-xl text-gray-700">{{ school.degree }}</p>
+								</div>
+								<!-- Info - Description -->
+								<div
+									v-html="school.description"
+									class="prose prose-lg mt-4"
+								></div>
+							</div>
+							<!-- Date -->
+							<div class="flex flex-col gap-px text-right">
+								<p class="text-lg text-gray-700">{{ school.date }}</p>
+								<p class="text-lg text-gray-700">{{ school.location }}</p>
+							</div>
+						</div>
+					</li>
+				</ul>
 			</section>
 		</div>
 	</main>
 </template>
 
 <script setup lang="ts">
+import { experienceData } from '@/interfaces/Experience';
+import { educationData } from '@/interfaces/Education';
+
+const experience = experienceData;
+const education = educationData;
+
 const skills = [
 	{
 		title: 'Front-end development',

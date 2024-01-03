@@ -1,14 +1,14 @@
 <template>
 	<header class="bg-transparent">
 		<nav
-			class="mx-auto flex max-w-6xl items-center justify-between px-2 xl:px-0 py-6"
+			class="container mx-auto flex max-w-6xl items-center justify-between py-6"
 			aria-label="Global"
 		>
 			<a href="/" class="-m-1.5 p-1.5">
 				<span class="sr-only">Vasilis Bakas</span>
 
 				<img
-					class="h-8 w-48"
+					class="h-8 w-32"
 					src="/assets/images/text-logo.svg"
 					alt="Vasilis Bakas Logo"
 				/>
@@ -28,7 +28,7 @@
 					v-for="item in navigation"
 					:key="item.name"
 					:href="item.href"
-					class="text-lg font-semibold leading-6 text-gray-700"
+					class="text-lg font-medium leading-6 text-gray-700"
 					>{{ item.name }}</a
 				>
 			</div>
