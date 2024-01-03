@@ -6,28 +6,25 @@ definePageMeta({
 	layout: 'full-width',
 });
 
-import twitterIcon from '/assets/social-icons/twitter.svg';
-import instagramIcon from '/assets/social-icons/instagram.svg';
-
 const socialLinks = ref([
 	{
-		ariaLabel: 'Follow on LinkedIn',
-		href: 'https://linkedin.com',
+		ariaLabel: 'Profile on LinkedIn',
+		href: 'https://linkedin.com/in/vasileios-bakas',
 		icon: 'ri:linkedin-fill',
 	},
 	{
-		ariaLabel: 'Follow on GitHub',
-		href: 'https://github.com',
+		ariaLabel: 'Profile on GitHub',
+		href: 'https://github.com/bill-mpakas',
 		icon: 'ri:github-fill',
 	},
 	{
-		ariaLabel: 'Follow on Twitter',
-		href: 'https://twitter.com',
+		ariaLabel: 'Follow on X',
+		href: 'https://twitter.com/bill_bakas',
 		icon: 'ri:twitter-x-fill',
 	},
 	{
 		ariaLabel: 'Follow on Instagram',
-		href: 'https://instagram.com',
+		href: 'https://www.instagram.com/bill_mpakas/',
 		icon: 'ri:instagram-fill',
 	},
 	// ... other social links
@@ -67,7 +64,7 @@ const images = [
 						<div class="mx-auto max-w-2xl lg:max-w-5xl">
 							<div class="max-w-3xl">
 								<h1
-									class="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl"
+									class="text-4xl font-bold leading-8 tracking-tight text-zinc-800 sm:text-5xl"
 								>
 									Hi, I am Vasilis. <br />
 									Product Designer / UI Developer.

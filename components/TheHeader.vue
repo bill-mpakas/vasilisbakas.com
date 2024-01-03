@@ -1,15 +1,16 @@
 <template>
 	<header class="bg-transparent">
 		<nav
-			class="mx-auto flex max-w-7xl items-center justify-between px-2 xl:px-0 py-6"
+			class="mx-auto flex max-w-6xl items-center justify-between px-2 xl:px-0 py-6"
 			aria-label="Global"
 		>
 			<a href="/" class="-m-1.5 p-1.5">
-				<span class="sr-only">Your Company</span>
+				<span class="sr-only">Vasilis Bakas</span>
+
 				<img
-					class="h-8 w-auto"
-					src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-					alt=""
+					class="h-8 w-48"
+					src="/assets/images/text-logo.svg"
+					alt="Vasilis Bakas Logo"
 				/>
 			</a>
 			<div class="flex lg:hidden">

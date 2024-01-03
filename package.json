@@ -12,6 +12,7 @@
     "@nuxt-themes/typography": "^1.0.1",
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "latest",
+    "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^20.10.6",
     "nuxt": "^3.9.0",
     "nuxt-headlessui": "^1.1.5",
