@@ -1,5 +1,5 @@
 <template>
-	<main id="resume" class="max-w-7xl py-12 xl:py-24">
+	<main id="resume" class="container py-12 xl:py-24">
 		<div class="flex flex-col gap-8 xl:gap-16 2xl:gap-24">
 			<section id="objective">
 				<h2
@@ -104,16 +104,90 @@
 					</li>
 				</ul>
 			</section>
+			<section id="licenses-certifications">
+				<h2
+					class="text-xl 2xl:text-2xl font-medium max-w-[400px] uppercase mb-8 border-gray-600 pb-3 border-b-2"
+				>
+					Licenses & Certifications
+				</h2>
+				<div
+					class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8 2xl:gap-10"
+				>
+					<div
+						v-for="(certificates, category) in groupedCertificationData"
+						:key="category"
+					>
+						<h4 class="text-xl mb-2 font-medium">{{ category }}</h4>
+						<ul class="flex flex-col gap-4">
+							<li v-for="(certificate, index) in certificates" :key="index">
+								<!-- Name & Organization -->
+								<div class="flex flex-col gap-px">
+									<!-- <Icon
+										size="0.8rem"
+										:name="certificate.icon"
+										class="icon"
+										color="#71717a"
+									/> -->
+									<h5 class="text-lg">{{ certificate.certificate }}</h5>
+									<span class="text-gray-600">{{
+										certificate.organization
+									}}</span>
+								</div>
+
+								<p v-if="certificate.description">
+									{{ certificate.description }}
+								</p>
+								<a
+									v-if="certificate.certificateUrl"
+									:href="certificate.certificateUrl"
+									>View Certificate</a
+								>
+								<p v-if="certificate.date" class="text-gray-700">
+									Issued: {{ certificate.date }}
+								</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<!-- Show a link that goes to all certificates in LinkeIn -->
+				<a
+					href="https://www.linkedin.com/in/vasileios-bakas/details/certifications/"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="py-1 mt-6 lg:mt-12 rounded-sm inline-flex gap-2 px-2 border border-gray-400 text-base text-gray-700"
+				>
+					<span>View all certificates</span>
+					<Icon
+						name="heroicons:arrow-top-right-on-square"
+						class="group -m-1 p-1"
+						color="#71717a"
+					/>
+				</a>
+			</section>
 		</div>
 	</main>
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import { experienceData } from '@/interfaces/Experience';
 import { educationData } from '@/interfaces/Education';
+import { certificationData } from '@/interfaces/Certificate';
 
 const experience = experienceData;
 const education = educationData;
+
+const groupedCertificationData = computed(() => {
+	return certificationData.reduce((groups, certificate) => {
+		const category = certificate.category;
+		if (!groups[category]) {
+			groups[category] = [];
+		}
+		groups[category].push(certificate);
+		return groups;
+	}, {} as Record<string, typeof certificationData>);
+});
 
 const skills = [
 	{
