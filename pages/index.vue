@@ -71,7 +71,10 @@ const images = [
 								</h1>
 								<p class="mt-6 text-xl leading-8 xl:text-2xl text-zinc-600">
 									I'm currently working at
-									<a class="hover:underline" href="https://pointer.gr"
+									<a
+										target="_blank"
+										class="hover:underline"
+										href="https://www.pointer.gr/en"
 										>Pointer.gr</a
 									>
 									while pursuing my Master's degree in Strategic Product Design.
@@ -122,7 +125,9 @@ const images = [
 			class="container lg:max-w-5xl max-w-4xl mx-auto py-6 lg:py-12"
 			id="post-list"
 		>
-			<h2 class="text-5xl tracking-tight font-bold">From the Blog</h2>
+			<h2 class="text-xl md:text-2xl xl:text-3xl tracking-tight font-medium">
+				Latest from the Blog
+			</h2>
 			<ul class="py-4 flex-col flex gap-6 lg:py-8">
 				<li
 					class="flex flex-col gap-2"
