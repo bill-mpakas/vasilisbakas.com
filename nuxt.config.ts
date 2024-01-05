@@ -1,7 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
 	ssr: false,
-	extends: '@nuxt-themes/typography',
 	typescript: { shim: false },
 	devtools: { enabled: false },
 	modules: ['@nuxtjs/tailwindcss', '@nuxt/content', 'nuxt-icon'],

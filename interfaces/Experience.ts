@@ -15,13 +15,13 @@ export const experienceData: Experience[] = [
 		description: `<ul>
     <li>Design and front-end development of Pointer's core product. Worked on multiple features and implemented products in collaboration with marketing managers, backend, and JavaScript developers.</li>
     <li>Developed, maintained, and extended Pointer's website based on the principles of reusability of components.</li>
-    <li>Dedicated to the ongoing maintenance and optimization of existing client websites.</li>
     <li>Custom Design and development of websites primarily using WordPress as a CMS.</li>
+    <li>Dedicated to the ongoing maintenance and optimization of existing client websites.</li>
     <li>Teaching Clients How to Use and Manage Their Websites and Online Stores.</li>
             </ul>`,
 	},
 	{
-		company: 'Pointer - Hosting Experts · Internship',
+		company: 'Pointer - Hosting Experts',
 		role: 'Technical Support Specialist',
 		location: 'Thessaloniki, Greece',
 		date: 'May 2018 - Present',

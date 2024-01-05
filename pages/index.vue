@@ -2,6 +2,9 @@
 const posts = await queryContent('blog')
 	.where({ tags: { $contains: ['tools'] } })
 	.find();
+
+const projects = await queryContent('projects').find();
+
 definePageMeta({
 	layout: 'full-width',
 });
@@ -57,6 +60,7 @@ const images = [
 
 <template>
 	<main>
+		<!-- Intro -->
 		<section class="py-12" id="intro">
 			<div class="sm:px-8 mt-9">
 				<div class="mx-auto w-full max-w-6xl lg:px-8">
@@ -96,6 +100,7 @@ const images = [
 				</div>
 			</div>
 		</section>
+		<!-- Image Section -->
 		<section class="py-6" id="images">
 			<div
 				class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8"
@@ -121,6 +126,37 @@ const images = [
 				</div>
 			</div>
 		</section>
+		<!-- Case Studies / Projects -->
+		<section
+			class="container lg:max-w-5xl max-w-4xl mx-auto py-6 lg:py-12"
+			id="projects"
+		>
+			<h2 class="text-xl md:text-2xl xl:text-3xl tracking-tight font-medium">
+				Case Studies / Projects
+			</h2>
+			<ul class="py-4 flex-col flex gap-6 lg:py-8">
+				<li
+					class="flex relative flex-col w-full gap-2 ease-in duration-300 bg-white/40 hover:bg-white border hover hover:shadow-md border-gray-200 p-8 rounded-lg shadow-xs"
+					v-for="(project, index) in projects"
+					:key="index"
+				>
+					<a
+						class="absolute top-0 bottom-0 left-0 right-0"
+						:href="project._path"
+					>
+					</a>
+					<figure>
+						<figcaption>
+							<h3 class="text-2xl font-medium text-zinc-700">
+								{{ project.title }}
+							</h3>
+							<p class="text-gray-500">{{ project.description }}</p>
+						</figcaption>
+					</figure>
+				</li>
+			</ul>
+		</section>
+		<!-- From the blog -->
 		<section
 			class="container lg:max-w-5xl max-w-4xl mx-auto py-6 lg:py-12"
 			id="post-list"
