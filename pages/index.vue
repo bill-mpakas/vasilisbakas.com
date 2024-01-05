@@ -3,7 +3,10 @@ const posts = await queryContent('blog')
 	.where({ tags: { $contains: ['tools'] } })
 	.find();
 
-const projects = await queryContent('projects').find();
+const projects = await queryContent('projects')
+	.only(['id', 'title', 'subtitle', '_path'])
+	.sort({ order: 1 })
+	.find();
 
 definePageMeta({
 	layout: 'full-width',
@@ -136,7 +139,7 @@ const images = [
 			</h2>
 			<ul class="py-4 flex-col flex gap-6 lg:py-8">
 				<li
-					class="flex relative flex-col w-full gap-2 ease-in duration-300 bg-white/40 hover:bg-white border hover hover:shadow-md border-gray-200 p-8 rounded-lg shadow-xs"
+					class="flex relative flex-col border hover:border-gray-300 border-gray-300 w-full gap-2 ease-in duration-300 bg-white/40 hover:bg-white hover hover:shadow-md p-8 rounded-lg shadow-xs"
 					v-for="(project, index) in projects"
 					:key="index"
 				>
@@ -150,7 +153,7 @@ const images = [
 							<h3 class="text-2xl font-medium text-zinc-700">
 								{{ project.title }}
 							</h3>
-							<p class="text-gray-500">{{ project.description }}</p>
+							<p class="text-gray-500">{{ project.subtitle }}</p>
 						</figcaption>
 					</figure>
 				</li>
