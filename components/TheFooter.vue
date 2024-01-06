@@ -1,5 +1,5 @@
 <template>
-	<footer class="mt-32 flex-none">
+	<footer class="flex-none">
 		<div class="sm:px-8">
 			<div class="mx-auto w-full max-w-7xl lg:px-8">
 				<div
@@ -14,26 +14,16 @@
 									class="flex flex-wrap justify-center gap-x-6 gap-y-1 text-sm font-medium text-zinc-800 dark:text-zinc-200"
 								>
 									<a
+										v-for="link in footerLinks"
+										:key="link.name"
+										:href="link.href"
 										class="transition hover:text-teal-500 dark:hover:text-teal-400"
-										href="/about"
-										>Blog</a
-									><a
-										class="transition hover:text-teal-500 dark:hover:text-teal-400"
-										href="/projects"
-										>Projects</a
-									><a
-										class="transition hover:text-teal-500 dark:hover:text-teal-400"
-										href="/speaking"
-										>About</a
-									><a
-										class="transition hover:text-teal-500 dark:hover:text-teal-400"
-										href="/uses"
-										>Uses</a
+										>{{ link.name }}</a
 									>
 								</div>
 								<p class="text-sm text-zinc-400 dark:text-zinc-500">
 									©
-									<!-- -->2023<!-- -->
+									<!-- -->2024<!-- -->
 									vasilisbakas.com. All rights reserved.
 								</p>
 							</div>
@@ -44,3 +34,11 @@
 		</div>
 	</footer>
 </template>
+
+<script setup>
+const footerLinks = [
+	{ name: 'About', href: '/about' },
+	{ name: 'Projects', href: '/projects' },
+	{ name: 'Uses', href: '/uses' },
+];
+</script>

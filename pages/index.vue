@@ -4,7 +4,7 @@ const posts = await queryContent('blog')
 	.find();
 
 const projects = await queryContent('projects')
-	.only(['id', 'title', 'subtitle', '_path'])
+	.only(['id', 'title', 'description', '_path'])
 	.sort({ order: 1 })
 	.find();
 
@@ -59,6 +59,27 @@ const images = [
 	},
 	// More posts...
 ];
+
+const formatDate = (date: string) => {
+	const d = new Date(date);
+	const day = String(d.getDate()).padStart(2, '0');
+	const month = [
+		'Jan',
+		'Feb',
+		'Mar',
+		'Apr',
+		'May',
+		'Jun',
+		'Jul',
+		'Aug',
+		'Sep',
+		'Oct',
+		'Nov',
+		'Dec',
+	][d.getMonth()];
+	const year = d.getFullYear();
+	return `${day} ${month} ${year}`;
+};
 </script>
 
 <template>
@@ -69,15 +90,15 @@ const images = [
 				<div class="mx-auto w-full max-w-6xl lg:px-8">
 					<div class="relative px-4 sm:px-8 lg:px-12">
 						<div class="mx-auto max-w-2xl lg:max-w-5xl">
-							<div class="max-w-3xl">
+							<div class="text-pretty">
 								<h1
 									class="text-4xl font-bold leading-8 tracking-tight text-zinc-800 sm:text-5xl"
 								>
-									Hi, I am Vasilis. <br />
-									Product Designer / UI Developer.
+									Hey there, I'm Vasilis.
 								</h1>
 								<p class="mt-6 text-xl leading-8 xl:text-2xl text-zinc-600">
-									I'm currently working at
+									I am a Product Designer / UI Developer based in Thessaloniki.
+									I am currently working at
 									<a
 										target="_blank"
 										class="hover:underline"
@@ -135,9 +156,9 @@ const images = [
 			id="projects"
 		>
 			<h2 class="text-xl md:text-2xl xl:text-3xl tracking-tight font-medium">
-				Case Studies / Projects
+				Featured Work
 			</h2>
-			<ul class="py-4 flex-col flex gap-6 lg:py-8">
+			<ul class="flex-col flex gap-6 mt-4 lg:mt-8">
 				<li
 					class="flex relative flex-col border hover:border-gray-300 border-gray-300 w-full gap-2 ease-in duration-300 bg-white/40 hover:bg-white hover hover:shadow-md p-8 rounded-lg shadow-xs"
 					v-for="(project, index) in projects"
@@ -153,13 +174,14 @@ const images = [
 							<h3 class="text-2xl font-medium text-zinc-700">
 								{{ project.title }}
 							</h3>
-							<p class="text-gray-500">{{ project.subtitle }}</p>
+							<p class="text-gray-500">{{ project.description }}</p>
 						</figcaption>
 					</figure>
 				</li>
 			</ul>
 		</section>
 		<!-- From the blog -->
+		<!-- 
 		<section
 			class="container lg:max-w-5xl max-w-4xl mx-auto py-6 lg:py-12"
 			id="post-list"
@@ -167,18 +189,25 @@ const images = [
 			<h2 class="text-xl md:text-2xl xl:text-3xl tracking-tight font-medium">
 				Latest from the Blog
 			</h2>
-			<ul class="py-4 flex-col flex gap-6 lg:py-8">
+			<ul class="flex-col flex gap-6 mt-4 lg:mt-8">
 				<li
-					class="flex flex-col gap-2"
+					class="flex flex-row justify-between gap-2"
 					v-for="article in posts"
 					:key="article._path"
 				>
-					<a class="underline text-2xl" :href="article._path"
+					<a
+						class="underline flex-1 text-gray-700 text-base max-w-sm md:max-w-none md:text-xl font-medium"
+						:href="article._path"
 						>{{ article.title }}
 					</a>
-					<small>{{ article.date }}</small>
+					
+					<time class="text-right" :datetime="formatDate(article.date)">{{
+						formatDate(article.date)
+					}}</time>
 				</li>
 			</ul>
 		</section>
+		
+	-->
 	</main>
 </template>

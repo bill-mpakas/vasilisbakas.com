@@ -1,5 +1,7 @@
 <script setup>
-const posts = await queryContent('blog').sort({ title: 1 }).find();
+definePageMeta({
+	layout: 'default',
+});
 </script>
 
 <template>

@@ -21,12 +21,10 @@ const props = defineProps({
 			<p class="text-base font-semibold leading-7 text-indigo-600">
 				{{ props.subTitle }}
 			</p>
-			<h2
-				class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
-			>
+			<h1 class="project__title">
 				{{ props.title }}
-			</h2>
-			<p class="mt-6 text-lg leading-8 text-gray-600">
+			</h1>
+			<p class="project__description">
 				{{ props.description }}
 			</p>
 		</div>

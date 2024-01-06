@@ -1,5 +1,5 @@
 <template>
-	<main id="resume" class="container py-12 xl:py-24">
+	<main id="resume" class="container max-w-6xl py-12 xl:py-24">
 		<div class="flex flex-col gap-8 xl:gap-16 2xl:gap-24">
 			<section id="objective">
 				<h2
@@ -53,10 +53,15 @@
 									<h3 class="font-medium text-xl md:text-2xl text-gray-900">
 										{{ job.company }}
 									</h3>
-									<p class="text-xl text-gray-700">{{ job.role }}</p>
+									<p class="text-xl text-gray-700">
+										{{ job.role }}
+									</p>
 								</div>
 								<!-- Info - Description -->
-								<div v-html="job.description" class="prose prose-lg mt-4"></div>
+								<div
+									v-html="job.description"
+									class="prose prose-lg mt-4 md:mt-6"
+								></div>
 							</div>
 							<!-- Date -->
 							<div class="flex flex-col gap-px text-right">
@@ -94,7 +99,7 @@
 								<!-- Info - Description -->
 								<div
 									v-html="school.description"
-									class="prose prose-lg mt-4"
+									class="prose prose-lg mt-4 md:mt-8"
 								></div>
 							</div>
 							<!-- Date -->
