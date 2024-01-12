@@ -13,14 +13,14 @@
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "latest",
     "@tailwindcss/typography": "^0.5.10",
-    "@types/node": "^20.10.6",
-    "nuxt": "^3.9.0",
+    "@types/node": "^20.11.0",
+    "nuxt": "^3.9.1",
     "nuxt-headlessui": "^1.1.5",
     "nuxt-icon": "^0.6.8"
   },
   "dependencies": {
     "@heroicons/vue": "^2.1.1",
     "@nuxt/content": "^2.10.0",
-    "date-fns": "^3.1.0"
+    "date-fns": "^3.2.0"
   }
 }
