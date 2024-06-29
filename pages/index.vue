@@ -113,17 +113,16 @@ const formatDate = (date: string) => {
 			</div>
 		</section>
 		<!-- Image Section -->
-		<section class="py-6" id="images">
+		<!-- <section class="py-6" id="images">
 			<div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
 				<div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl"
 					v-for="(image, index) in images" :key="index" :class="index % 2 === 0 ? 'rotate-2' : '-rotate-2'">
 					<img :alt="image.alt" loading="lazy" width="3744" height="5616" decoding="async" data-nimg="1"
 						class="absolute inset-0 h-full w-full object-cover" style="color: transparent"
 						sizes="(min-width: 640px) 18rem, 11rem" :src="image.imageUrl" />
-					<!-- <small class="relative">{{ image.alt }}</small> -->
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<!-- Case Studies / Projects -->
 		<section class="container lg:max-w-5xl max-w-4xl mx-auto py-6 lg:py-12" id="projects">
 			<h2 class="text-xl md:text-2xl xl:text-3xl tracking-tight font-medium">
@@ -131,7 +130,7 @@ const formatDate = (date: string) => {
 			</h2>
 			<ul class="flex-col flex gap-6 mt-4 lg:mt-8">
 				<li
-					class="flex relative flex-col border hover:border-gray-300 border-gray-300 w-full gap-2 ease-in duration-300 bg-white/40 hover:bg-white hover hover:shadow-md p-8 rounded-lg shadow-xs"
+					class="flex relative flex-col border hover:border-gray-300 border-gray-300 w-full gap-2 ease-in duration-300 bg-white/70 hover:bg-white hover hover:shadow-md p-8 rounded-lg shadow-xs"
 					v-for="(project, index) in projects" :key="index">
 					<a class="absolute top-0 bottom-0 left-0 right-0" :href="project._path">
 					</a>
