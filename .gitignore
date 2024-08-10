@@ -21,3 +21,13 @@ logs
 .env
 .env.*
 !.env.example
+
+
+# package-lock
+package-lock.json
+
+# Yarn lock file
+yarn.lock
+
+# cache json
+.cache.json
