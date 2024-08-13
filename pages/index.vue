@@ -101,7 +101,7 @@ const formatDate = (date: string) => {
                   I am currently working at
                   <a
                     target="_blank"
-                    class="hover:underline"
+                    class="hover:underline underline underline-offset-4 decoration-dashed"
                     href="https://www.pointer.gr/en"
                     >pointer.gr</a
                   >
