@@ -103,10 +103,12 @@ const formatDate = (date: string) => {
                     target="_blank"
                     class="hover:underline"
                     href="https://www.pointer.gr/en"
-                    >Pointer.gr</a
+                    >pointer.gr</a
                   >
-                  while pursuing my Master's degree in Strategic Product Design.
+                  while <del>pursuing</del> completing my Master's degree in
+                  Strategic Product Design.
                 </p>
+
                 <div class="mt-6 flex gap-6">
                   <a
                     v-for="link in socialLinks"
@@ -126,18 +128,33 @@ const formatDate = (date: string) => {
     </section>
     <!-- Image Section -->
     <!-- <section class="py-6" id="images">
-			<div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-				<div class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl"
-					v-for="(image, index) in images" :key="index" :class="index % 2 === 0 ? 'rotate-2' : '-rotate-2'">
-					<img :alt="image.alt" loading="lazy" width="3744" height="5616" decoding="async" data-nimg="1"
-						class="absolute inset-0 h-full w-full object-cover" style="color: transparent"
-						sizes="(min-width: 640px) 18rem, 11rem" :src="image.imageUrl" />
-				</div>
-			</div>
-		</section> -->
+      <div
+        class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8"
+      >
+        <div
+          class="relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl"
+          v-for="(image, index) in images"
+          :key="index"
+          :class="index % 2 === 0 ? 'rotate-2' : '-rotate-2'"
+        >
+          <img
+            :alt="image.alt"
+            loading="lazy"
+            width="3744"
+            height="5616"
+            decoding="async"
+            data-nimg="1"
+            class="absolute inset-0 h-full w-full object-cover"
+            style="color: transparent"
+            sizes="(min-width: 640px) 18rem, 11rem"
+            :src="image.imageUrl"
+          />
+        </div>
+      </div>
+    </section> -->
     <!-- Case Studies / Projects -->
     <section
-      class="container lg:max-w-5xl max-w-4xl mx-auto py-6 lg:py-12"
+      class="container lg:max-w-5xl max-w-4xl mx-auto py-6 lg:py-8"
       id="projects"
     >
       <h2 class="text-xl md:text-2xl xl:text-3xl tracking-tight font-medium">
@@ -149,50 +166,58 @@ const formatDate = (date: string) => {
           v-for="(project, index) in projects"
           :key="index"
         >
+          <!-- :href="project._path" -->
           <a
-            class="absolute top-0 bottom-0 left-0 right-0"
-            :href="project._path"
+            class="absolute top-0 bottom-0 cursor-not-allowed left-0 right-0"
+            href="#"
           >
           </a>
-          <figure>
-            <figcaption>
+          <div
+            class="flex flex-col md:items-center md:flex-row gap-4 justify-between"
+          >
+            <div>
               <h3 class="text-2xl font-medium text-zinc-700">
                 {{ project.title }}
               </h3>
               <p class="text-gray-500">{{ project.description }}</p>
-            </figcaption>
-          </figure>
+            </div>
+            <!-- Status -->
+            <div>
+              <span
+                class="text-sm lg:text-base font-medium tracking-widest text-gray-500"
+              >
+                CASE STUDY SOON
+              </span>
+            </div>
+          </div>
         </li>
       </ul>
     </section>
     <!-- From the blog -->
-    <!-- 
-		<section
-			class="container lg:max-w-5xl max-w-4xl mx-auto py-6 lg:py-12"
-			id="post-list"
-		>
-			<h2 class="text-xl md:text-2xl xl:text-3xl tracking-tight font-medium">
-				Latest from the Blog
-			</h2>
-			<ul class="flex-col flex gap-6 mt-4 lg:mt-8">
-				<li
-					class="flex flex-row justify-between gap-2"
-					v-for="article in posts"
-					:key="article._path"
-				>
-					<a
-						class="underline flex-1 text-gray-700 text-base max-w-sm md:max-w-none md:text-xl font-medium"
-						:href="article._path"
-						>{{ article.title }}
-					</a>
-					
-					<time class="text-right" :datetime="formatDate(article.date)">{{
-						formatDate(article.date)
-					}}</time>
-				</li>
-			</ul>
-		</section>
-		
-	-->
+    <!-- <section
+      class="container lg:max-w-5xl max-w-4xl mx-auto py-6 lg:py-12"
+      id="post-list"
+    >
+      <h2 class="text-xl md:text-2xl xl:text-3xl tracking-tight font-medium">
+        Latest from the Blog
+      </h2>
+      <ul class="flex-col flex gap-6 mt-4 lg:mt-8">
+        <li
+          class="flex flex-row justify-between gap-2"
+          v-for="article in posts"
+          :key="article._path"
+        >
+          <a
+            class="underline flex-1 text-gray-700 text-base max-w-sm md:max-w-none md:text-xl font-medium"
+            :href="article._path"
+            >{{ article.title }}
+          </a>
+
+          <time class="text-right" :datetime="formatDate(article.date)">{{
+            formatDate(article.date)
+          }}</time>
+        </li>
+      </ul>
+    </section> -->
   </main>
 </template>
