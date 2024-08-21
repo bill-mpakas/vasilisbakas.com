@@ -14,7 +14,7 @@
     "@nuxt/image": "^1.7.0",
     "@nuxtjs/tailwindcss": "latest",
     "@tailwindcss/typography": "^0.5.14",
-    "@types/node": "^22.2.0",
+    "@types/node": "^22.4.2",
     "nuxt": "^3.12.4",
     "nuxt-headlessui": "^1.2.0",
     "nuxt-icon": "^0.6.10"
